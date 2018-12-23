@@ -20,13 +20,15 @@ ext {
     scalaMajor = '2.12'
     scalaMinor = '8'
     scalaVersion = "$scalaMajor.$scalaMinor"
+    akkaVersion = '2.5.19'
 }
 
 dependencies {
     // Scala - Standard library
     provided group: 'org.scala-lang', name: 'scala-library', version: scalaVersion
-    
-    
+
+    // Akka Actor - Concurrent Actor API
+    implementation group: 'com.typesafe.akka', name: "akka-actor_$scalaMajor", version: akkaVersion
 
     // Apache Commons IO - IO tools
     implementation group: 'commons-io', name: 'commons-io', version: '2.6'
@@ -37,12 +39,11 @@ dependencies {
     runtime group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 
     // Frameworks
-    testImplementation group: 'org.scalatest', name: 'scalatest_2.12', version: '3.0.5'
+    testImplementation group: 'org.scalatest', name: "scalatest_$scalaMajor", version: '3.0.5'
     testImplementation group: 'junit', name: 'junit', version: '4.12'
-    testImplementation group: 'org.scalactic', name: 'scalactic_2.12', version: '3.0.5'
-    // Use test
-    testImplementation group: 'org.scala-lang.modules', name: 'scala-xml_2.12', version: '1.1.0'
-    testImplementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    testImplementation group: 'org.scalactic', name: "scalactic_$scalaMajor", version: '3.0.5'
+    // Akka Testkit - Testing Akka Actors
+    testImplementation group: 'com.typesafe.akka', name: "akka-testkit_$scalaMajor", version: akkaVersion
 }
 
 jar {
