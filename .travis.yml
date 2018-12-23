@@ -1,0 +1,26 @@
+language: scala
+scala:
+  - 2.12.8
+
+env:
+  global:
+    - CODECOV_TOKEN="3137b5f2-4e56-4dbc-a87d-d64e436b5670"
+
+script:
+  - ./gradlew clean build
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    recipients:
+      - bodand@pm.me
+    on_success: never
+    on_failure: always
+  webhooks:
+    urls:
+      - "https://webhooks.gitter.im/e/bb045fea893d85db7b6c"
+    on_success: change
+    on_failure: always
+    on_start: never
