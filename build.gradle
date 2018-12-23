@@ -1,6 +1,7 @@
 plugins {
     id 'scala'
     id 'maven'
+    id 'jacoco'
     id 'nebula.provided-base' version '3.0.3'
 }
 
@@ -88,5 +89,12 @@ install {
                 }
             }
         }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.setEnabled(true)
+        html.setEnabled(false)
     }
 }
