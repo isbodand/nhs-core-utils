@@ -1,0 +1,29 @@
+## IntelliJ
+*.iml
+/.idea/
+
+## IntelliJ - Perl plugin
+/*.pm
+
+## Gradle
+/.gradle/
+/build/
+
+## Eclipse somehow
+/.settings/
+*.classpath
+*.project
+
+## JVM
+*.class
+*.log
+
+## bodand's stuff, don't ask why/what
+*.bodandkeep.*
+
+## Test download directories, in case humanity dies and they remain
+/dwn*/
+
+## backups
+*.bak
+*~
